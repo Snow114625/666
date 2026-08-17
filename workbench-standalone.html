@@ -172,4 +172,443 @@ function saveRecord(tab){const input=document.getElementById(tab+'-input');const
 function generateOutput(tab,type,input){return tab==='writing'?generateWritingOutput(type,input,state.writingMode):generateDrawingOutput(type,input)}
 function generateWritingOutput(type,input,mode){const c=mode==='concise';const t=new Date().toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});const templates={'整理设定':c?`## 设定整理（精简）\n\n- **核心设定**：${input.slice(0,50)}...\n- **关键要素**：待补充\n- **潜在冲突**：待补充`:`## 小说设定整理\n\n### 一、设定概要\n${input}\n\n### 二、关键要素提取\n- **人物**：（待提取）\n- **世界观**：（待提取）\n- **核心规则**：（待提取）\n\n### 三、设定间关联\n- 逻辑链路：（梳理因果关系）\n\n### 四、潜在矛盾点\n- 检查是否有自相矛盾\n\n> 记录时间：${t}`,'润色文字':c?`## 润色建议（精简）\n\n**原文**：${input.slice(0,60)}...\n**润色后**：（待处理）\n**改动要点**：待标注`:`## 文字润色\n\n### 原文\n${input}\n\n### 润色后\n（待处理）\n\n### 改动说明\n|原文|润色后|改动原因|\n|---|---|---|\n\n### 润色原则\n1.保留原意与风格\n2.优化节奏与语感\n3.修正语病冗余\n4.增强画面感\n\n> 记录时间：${t}`,'梳理大纲':c?`## 大纲梳理（精简）\n\n- **主线**：${input.slice(0,50)}...\n- **三幕结构**：出发→深入→抉择\n- **关键转折**：待补充`:`## 故事大纲梳理\n\n### 主线输入\n${input}\n\n### 三幕结构建议\n\n**第一幕：设定与出发**\n- 开场：建立日常世界\n- 触发事件：打破平衡\n- 情节点1：主角行动\n\n**第二幕：对抗与深入**\n- 上升动作：障碍与尝试\n- 中点：重大转折\n- 情节点2：最低谷\n\n**第三幕：解决**\n- 高潮：最终对决\n- 结局：新平衡\n\n> 记录时间：${t}`,'整合灵感':c?`## 灵感整合（精简）\n\n- **灵感片段**：${input.slice(0,50)}...\n- **核心主题**：待提炼\n- **可发展方向**：待梳理`:`## 零散灵感整合\n\n### 灵感原始记录\n${input}\n\n### 主题提炼\n- **核心主题**：（提取共通主题）\n- **情绪基调**：（恐惧/温暖/荒诞/...）\n\n### 灵感分类\n|灵感片段|可用于|优先级|\n|---|---|---|\n\n### 整合方向建议\n1.可融合为短篇骨架\n2.可拆分为独立场景\n3.可作为长篇支线\n\n> 记录时间：${t}`};return templates[type]||`## 写作记录\n\n**类型**：${type}\n**内容**：${input}\n\n> 记录时间：${t}`}
 function generateDrawingOutput(type,input){const t=new Date().toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});const templates={'练习规划':`## 板绘练习规划\n\n### 你的输入\n${input}\n\n### 阶段规划\n\n**第一阶段：基础线稿（2-3周）**\n- 目标：线条稳定、起形准确\n- 每天30分钟临摹线稿\n\n**第二阶段：透视基础（3-4周）**\n- 一点→两点→三点透视\n- 每天画5个方块不同角度\n\n**第三阶段：光影体积（3-4周）**\n- 球体/方体/圆柱光影\n- 明暗五调子\n\n**第四阶段：综合临摹（持续）**\n- 带光影完整临摹\n\n### 每日建议\n- 热身10分钟\n- 专项30分钟\n- 临摹20分钟\n\n> 记录时间：${t}`,'透视讲解':`## 透视讲解\n\n### 你的问题\n${input}\n\n### 一点透视\n想象站在笔直马路上往前看：\n- 电线杆越远越靠近\n- 最终在远处一个点汇合\n- 这个点叫「消失点」\n\n**要点**：只有一个消失点，纵深线都指向它\n\n### 举例：画走廊\n1.画面中央偏上定消失点\n2.画正面矩形（门框）\n3.四角连线到消失点\n4.截取深度\n5.连接画尽头\n\n### 常见错误\n- 消失点不固定\n- 水平线变弯\n\n> 记录时间：${t}`,'光影讲解':`## 光影知识讲解\n\n### 你的问题\n${input}\n\n### 明暗五调子（球体为例，光从左上来）\n1.**亮面**：最亮\n2.**灰面**：中等\n3.**明暗交界线**：最暗的弧线\n4.**暗面**：光照不到\n5.**反光**：比暗面稍亮\n\n### 口诀\n> 亮→灰→明暗交界（最暗）→暗面→反光→投影\n\n### 投影\n- 靠近物体最暗，向外渐浅\n- 方向和光源相反\n\n### 新手常见问题\n- 明暗交界线不敢画暗\n- 反光画太亮\n- 投影画太浅\n\n> 记录时间：${t}`,'练习纠错':`## 练习纠错\n\n### 你的问题\n${input}\n\n### 常见问题对照\n\n**线稿阶段**\n- 线条抖→手腕发力，应手臂带动\n- 比例不准→先定整体再画细节\n\n**透视阶段**\n- 立体感不对→检查消失点\n- 转折奇怪→检查透视线\n\n**光影阶段**\n- 画面发灰→对比不够\n- 体积感弱→明暗交界线没画\n- 物体飘着→投影太浅\n\n请描述更具体的问题，我给针对性方案。\n\n> 记录时间：${t}`,'实操要点':`## 板绘实操要点\n\n### 你的问题\n${input}\n\n### 握笔与发力\n- 手腕放松，手臂带动画长线\n- 短线用手腕，长线用肘部\n\n### 笔刷设置\n- 起稿：细线软笔刷（60-80%）\n- 铺色：大笔刷（100%）\n- 过渡：软笔刷（30-50%）\n\n### 图层管理\n- 线稿/底色/阴影分图层\n\n### 常见误区\n- 放大太多画细节→退远看整体\n- 频繁撤销→擦掉重来\n- 一直用一个笔刷→分阶段换\n\n> 记录时间：${t}`,'示范描述':`## 绘画示范步骤\n\n### 你的需求\n${input}\n\n### 步骤\n1.**起形**：定四极，几何形概括\n2.**定光源**：标光线方向\n3.**铺暗面**：整体铺中间灰\n4.**加深明暗交界线**：画面最暗处\n5.**过渡**：软笔刷亮暗过渡\n6.**画投影**：正下方最暗，向外渐浅\n7.**收尾**：检查对比度\n\n> 记录时间：${t}`};return templates[type]||`## 板绘记录\n\n**类型**：${type}\n**内容**：${input}\n\n> 记录时间：${t}`}
-function renderRecords(tab){const list=tab==='writing'?state.writingRecords:state.drawingRecords;const container=document.getElementById(tab+'-list');const countEl=document.getElementById(tab+'-count');countEl.textContent=list.length+'条';if(list.length===0){const ic=tab==='writing'?'var(--accent-writing)':'var(--accent-drawing)';container.innerHTML=`<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="${ic}" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg><p>暂无记录<br>在上方输入内容后保存即可</p ></div>`;return}container.innerHTML=list.map(r=>{const ds=new Date(r.date).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});const mt=r.mode?`<span class="record-mode">${r.mode==='concise'?'精简版':'结构化'}</span>`:'';return `<div class="record-card ${tab}"><div class="record-meta"><span class="record-type ${tab==='writing'?'tag-writing':'tag-drawing'}">${r.type}</span><span class="record-date">${ds}</span>${mt}<button class="record-delete" onclick="deleteRecord('${tab}',${r.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+function renderRecords(tab){const list=tab==='writing'?state.writingRecords:state.drawingRecords;const container=document.getElementById(tab+'-list');const countEl=document.getElementById(tab+'-count');countEl.textContent=list.length+'条';if(list.length===0){const ic=tab==='writing'?'var(--accent-writing)':'var(--accent-drawing)';container.innerHTML=`<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="${ic}" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg><p>暂无记录<br>在上方输入内容后保存即可</p ></div>`;return}container.innerHTML=list.map(r=>{const ds=new Date(r.date).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});const mt=r.mode?`<span class="record-mode">${r.mode==='concise'?'精简版':'结构化'}</span>`:'';return `<div class="record-card ${tab}"><div class="record-meta"><span class="record-type ${tab==='writing'?'tag-writing':'tag-drawing'}">${r.type}</span><span class="record-date">${ds}</span>${mt}<button class="record-delete" onclick="deleteRecord('${tab}',${r.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </button>
+            </div>
+            <div class="record-input-text">${escapeHtml(r.input)}</div>
+            <div class="record-output">${formatOutput(r.output)}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ============================================================
+    //  格式化输出（简易 Markdown 渲染）
+    // ============================================================
+    function formatOutput(text) {
+      let html = escapeHtml(text);
+      // 标题
+      html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+      html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+      html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+      // 粗体
+      html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      // 行内代码
+      html = html.replace(/`(.+?)`/g, '<code>$1</code>');
+      // 引用
+      html = html.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
+      // 列表
+      html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+      html = html.replace(/(<li>.+<\/li>\n?)+/g, (m) => '<ul>' + m + '</ul>');
+      // 表格（简易处理）
+      html = html.replace(/\|(.+)\|/g, (match) => {
+        const cells = match.split('|').filter(c => c.trim());
+        if (cells.length === 0) return match;
+        return '<div style="display:flex;gap:12px;padding:4px 0;border-bottom:1px solid var(--border);font-size:0.82rem;">' +
+               cells.map(c => `<span style="flex:1">${c.trim()}</span>`).join('') + '</div>';
+      });
+      // 段落
+      html = html.replace(/\n\n/g, '</p ><p style="margin:8px 0;">');
+      html = '<p style="margin:8px 0;">' + html + '</p >';
+      // 清理空段落
+      html = html.replace(/<p[^>]*>\s*<\/p>/g, '');
+      return html;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ============================================================
+    //  删除记录
+    // ============================================================
+    function deleteRecord(tab, id) {
+      const list = tab === 'writing' ? state.writingRecords : state.drawingRecords;
+      const idx = list.findIndex(r => r.id === id);
+      if (idx !== -1) {
+        list.splice(idx, 1);
+        saveState();
+        renderRecords(tab);
+        showToast('已删除');
+      }
+    }
+
+    // ============================================================
+    //  记账区：工具函数
+    // ============================================================
+    function todayStr() {
+      const d = new Date();
+      return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    }
+
+    function fmtMoney(n) {
+      const num = Number(n) || 0;
+      // 整数显示不带小数，小数保留两位
+      return '¥' + (Number.isInteger(num) ? num.toString() : num.toFixed(2));
+    }
+
+    // 计算某天的统计
+    function calcDayStats(dateKey) {
+      const dayRecords = state.accountRecords.filter(r => r.date === dateKey);
+      let expense = 0, income = 0, save = 0;
+      dayRecords.forEach(r => {
+        if (r.type === 'expense') expense += r.amount;
+        else if (r.type === 'income') income += r.amount;
+        else if (r.type === 'save') save += r.amount;
+      });
+      return { expense, income, save, balance: income - expense, count: dayRecords.length };
+    }
+
+    // 计算累计统计
+    function calcTotalStats() {
+      let expense = 0, income = 0, save = 0;
+      state.accountRecords.forEach(r => {
+        if (r.type === 'expense') expense += r.amount;
+        else if (r.type === 'income') income += r.amount;
+        else if (r.type === 'save') save += r.amount;
+      });
+      // 记账天数 = 有记录的不同日期数
+      const days = new Set(state.accountRecords.map(r => r.date)).size;
+      return { expense, income, save, days };
+                      }
+    // ============================================================
+    //  记账区：类型切换 + 分类渲染
+    // ============================================================
+    function setAccType(type) {
+      accType = type;
+      ['expense', 'income', 'save'].forEach(t => {
+        document.getElementById('acc-type-' + t).classList.toggle('active', t === type);
+      });
+      accCategory = ACC_CATEGORIES[type][0]; // 默认选第一个分类
+      renderCategories();
+    }
+
+    function renderCategories() {
+      const container = document.getElementById('acc-categories');
+      container.innerHTML = ACC_CATEGORIES[accType].map(cat =>
+        `<button class="cat-chip ${cat === accCategory ? 'active' : ''}" onclick="accCategory='${cat}';renderCategories()">${cat}</button>`
+      ).join('');
+    }
+
+    // ============================================================
+    //  记账区：保存（新增 / 更新）
+    // ============================================================
+    function saveAccountRecord() {
+      const amountInput = document.getElementById('acc-amount');
+      const noteInput = document.getElementById('acc-note');
+      const dateInput = document.getElementById('acc-date');
+      const amount = parseFloat(amountInput.value);
+
+      // 主动纠错：金额校验
+      if (!amount || amount <= 0) {
+        showToast('金额无效：请输入大于 0 的数字');
+        amountInput.focus();
+        return;
+      }
+      if (amount > 99999999) {
+        showToast('金额超出范围（上限 9999 万）');
+        return;
+      }
+      if (!accCategory) {
+        showToast('请选择一个分类');
+        return;
+      }
+      const dateVal = dateInput.value || todayStr();
+
+      if (accEditingId !== null) {
+        // 更新模式
+        const rec = state.accountRecords.find(r => r.id === accEditingId);
+        if (rec) {
+          rec.type = accType;
+          rec.amount = Math.round(amount * 100) / 100;
+          rec.category = accCategory;
+          rec.note = noteInput.value.trim();
+          rec.date = dateVal;
+        }
+        showToast('已修改该笔记录');
+      } else {
+        // 新增模式
+        state.accountRecords.push({
+          id: Date.now(),
+          type: accType,
+          amount: Math.round(amount * 100) / 100,
+          category: accCategory,
+          note: noteInput.value.trim(),
+          date: dateVal,
+          ts: Date.now()
+        });
+        showToast('已记一笔 ' + ACC_TYPE_META[accType].label);
+      }
+
+      resetAccForm();
+      saveState();
+      renderAccountPanel();
+    }
+
+    // 编辑：把记录填回表单
+    function editAccountRecord(id) {
+      const rec = state.accountRecords.find(r => r.id === id);
+      if (!rec) return;
+      accEditingId = id;
+      setAccType(rec.type);
+      accCategory = rec.category;
+      renderCategories();
+      document.getElementById('acc-amount').value = rec.amount;
+      document.getElementById('acc-note').value = rec.note || '';
+      document.getElementById('acc-date').value = rec.date;
+
+      const btn = document.getElementById('acc-save-btn');
+      btn.textContent = '更新该笔记录';
+      btn.classList.add('editing');
+
+      // 滚动到表单
+      document.querySelector('#panel-account .input-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function deleteAccountRecord(id) {
+      if (!confirm('确认删除这笔记录？删除后不可恢复。')) return;
+      const idx = state.accountRecords.findIndex(r => r.id === id);
+      if (idx !== -1) {
+        state.accountRecords.splice(idx, 1);
+        // 如果正在编辑这条记录，重置表单
+        if (accEditingId === id) resetAccForm();
+        saveState();
+        renderAccountPanel();
+        showToast('已删除');
+      }
+    }
+
+    function resetAccForm() {
+      accEditingId = null;
+      document.getElementById('acc-amount').value = '';
+      document.getElementById('acc-note').value = '';
+      document.getElementById('acc-date').value = todayStr();
+      const btn = document.getElementById('acc-save-btn');
+      btn.textContent = '保存记录';
+      btn.classList.remove('editing');
+    }
+
+    // ============================================================
+    //  记账区：渲染明细行
+    // ============================================================
+    function renderAccRecordRow(r) {
+      const meta = ACC_TYPE_META[r.type];
+      const amountStr = (r.type === 'expense' ? '−' : '+') + fmtMoney(r.amount);
+      const noteHtml = r.note ? `<div class="acc-record-note">${escapeHtml(r.note)}</div>` : '';
+      return `
+        <div class="acc-record">
+          <div class="acc-record-icon ${r.type}">${meta.icon}</div>
+          <div class="acc-record-body">
+            <div class="acc-record-cat">${escapeHtml(r.category)}<span style="font-size:0.7rem;color:var(--text-muted);font-weight:400;">${r.date}</span></div>
+            ${noteHtml}
+          </div>
+          <div class="acc-record-amount ${r.type}">${amountStr}</div>
+          <div class="acc-record-ops">
+            <button class="acc-op-btn" onclick="editAccountRecord(${r.id})" title="修改">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </button>
+            <button class="acc-op-btn" onclick="deleteAccountRecord(${r.id})" title="删除">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+        </div>
+      `;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }
+    // ============================================================
+    //  记账区：渲染整个面板
+    // ============================================================
+    function renderAccountPanel() {
+      const today = todayStr();
+
+      // 今日统计
+      const t = calcDayStats(today);
+      document.getElementById('stat-today-expense').textContent = fmtMoney(t.expense);
+      document.getElementById('stat-today-income').textContent = fmtMoney(t.income);
+      const balanceEl = document.getElementById('stat-today-balance');
+      balanceEl.textContent = (t.balance >= 0 ? '+' : '') + fmtMoney(t.balance).replace('¥', '¥');
+      balanceEl.style.color = t.balance >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+
+      // 累计统计
+      const total = calcTotalStats();
+      document.getElementById('cum-save').textContent = fmtMoney(total.save);
+      document.getElementById('cum-expense').textContent = fmtMoney(total.expense);
+      document.getElementById('cum-income').textContent = fmtMoney(total.income);
+      document.getElementById('cum-days').textContent = total.days;
+
+      // 今日明细（按时间倒序，最新在上）
+      const todayRecords = state.accountRecords
+        .filter(r => r.date === today)
+        .sort((a, b) => (b.ts || b.id) - (a.ts || a.id));
+      document.getElementById('acc-today-count').textContent = todayRecords.length + ' 笔';
+      const listEl = document.getElementById('today-records');
+      if (todayRecords.length === 0) {
+        listEl.innerHTML = `
+          <div class="empty-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-account)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <p>今天还没有记账<br>在上方「记一笔」开始</p >
+          </div>`;
+      } else {
+        listEl.innerHTML = todayRecords.map(renderAccRecordRow).join('');
+      }
+
+      // 日期输入框默认值
+      const dateInput = document.getElementById('acc-date');
+      if (!dateInput.value) dateInput.value = today;
+      const queryInput = document.getElementById('query-date');
+      if (!queryInput.value) queryInput.value = today;
+    }
+
+    // ============================================================
+    //  记账区：历史查询
+    // ============================================================
+    function queryHistory() {
+      const dateVal = document.getElementById('query-date').value;
+      const resultEl = document.getElementById('history-result');
+      if (!dateVal) {
+        showToast('请先选择查询日期');
+        return;
+      }
+
+      const s = calcDayStats(dateVal);
+      const dayRecords = state.accountRecords
+        .filter(r => r.date === dateVal)
+        .sort((a, b) => (b.ts || b.id) - (a.ts || a.id));
+
+      if (dayRecords.length === 0) {
+        resultEl.innerHTML = `
+          <div class="empty-state" style="padding: 24px 16px;">
+            <p>${dateVal} 当天没有记账记录</p >
+          </div>`;
+        return;
+      }
+
+      resultEl.innerHTML = `
+        <div class="history-summary">
+          <span>支出 <b style="color:var(--accent-red);">${fmtMoney(s.expense)}</b></span>
+          <span>收入 <b style="color:var(--accent-green);">${fmtMoney(s.income)}</b></span>
+          <span>存钱 <b style="color:var(--accent-save);">${fmtMoney(s.save)}</b></span>
+          <span>净结余 <b style="color:${s.balance >= 0 ? 'var(--accent-green)' : 'var(--accent-red)'};">${fmtMoney(s.balance)}</b></span>
+        </div>
+        ${dayRecords.map(renderAccRecordRow).join('')}
+      `;
+    }
+
+    // ============================================================
+    //  导出 / 导入 / 清空
+    // ============================================================
+    function exportData() {
+      const data = {
+        version: 1,
+        exportDate: new Date().toISOString(),
+        state: state
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `workbench-backup-${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('已导出备份文件');
+    }
+
+    function importData(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (data.state) {
+            state = { ...state, ...data.state };
+            saveState();
+            renderRecords('writing');
+            renderRecords('drawing');
+            if (state.writingMode) setMode(state.writingMode);
+            showToast('导入成功');
+          } else {
+            showToast('文件格式不正确');
+          }
+        } catch (err) {
+          showToast('导入失败：文件解析错误');
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = '';
+    }
+
+    function clearAllData() {
+      if (!confirm('确认清空所有数据？此操作不可撤销。\n\n（包含写作记录、板绘记录、全部记账数据）\n建议先导出备份。')) return;
+      if (!confirm('再次确认：真的要清空全部记录吗？')) return;
+      state.writingRecords = [];
+      state.drawingRecords = [];
+      state.accountRecords = [];
+      saveState();
+      renderRecords('writing');
+      renderRecords('drawing');
+      renderAccountPanel();
+      resetAccForm();
+      showToast('已清空所有数据');
+    }
+
+    // ============================================================
+    //  Toast
+    // ============================================================
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    // ============================================================
+    //  Service Worker 注册
+    // ============================================================
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const swCode = "\nconst CACHE_NAME = 'workbench-v1';\nconst CORE_URLS = ['./', './index.html'];\nself.addEventListener('install', e => {\n  e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(CORE_URLS)).then(() => self.skipWaiting()).catch(() => {}));\n});\nself.addEventListener('activate', e => {\n  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim()));\n});\nself.addEventListener('fetch', e => {\n  if (e.request.method !== 'GET') return;\n  e.respondWith(\n    caches.match(e.request).then(cached => {\n      if (cached) return cached;\n      return fetch(e.request).then(res => {\n        if (res.ok && res.type === 'basic') {\n          const copy = res.clone();\n          caches.open(CACHE_NAME).then(c => c.put(e.request, copy));\n        }\n        return res;\n      }).catch(() => cached);\n    })\n  );\n});\n";
+        const blob = new Blob([swCode], {type: 'application/javascript'});
+        const swUrl = URL.createObjectURL(blob);
+        navigator.serviceWorker.register(swUrl)
+          .then(() => console.log('[PWA] Service Worker 已注册（内联模式）'))
+          .catch((err) => console.warn('[PWA] SW 注册失败:', err));
+      });
+    }
+
+    // ============================================================
+    //  PWA 安装提示（beforeinstallprompt）
+    // ============================================================
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    // ============================================================
+    //  初始化
+    // ============================================================
+    loadState();
+    switchTab(state.activeTab || 'writing');
+    if (state.writingMode) {
+      document.getElementById('mode-default').classList.toggle('active', state.writingMode === 'default');
+      document.getElementById('mode-concise').classList.toggle('active', state.writingMode === 'concise');
+    }
+    renderRecords('writing');
+    renderRecords('drawing');
+
+    // 记账区初始化：默认类型、分类、日期、面板渲染
+    setAccType('expense');
+    resetAccForm();
+    renderAccountPanel();
+
+    // 如果已作为 PWA 安装，隐藏提示
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+      document.getElementById('pwa-hint').style.display = 'none';
+    }
+  </script>
+</body>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
