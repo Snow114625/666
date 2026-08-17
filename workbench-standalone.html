@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="工作台">
+<meta name="theme-color" content="#0f1117">
+<meta name="description" content="写作创作区+自学板绘区+我的账户记账区">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoi5LmD5YW46aKd5o6nIiwic2hvcnRfbmFtZSI6IuWmguWknSIsInN0YXJ0X3VybCI6Ii4iLCJzY29wZSI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMGYxMTE3IiwidGhlbWVfY29sb3IiOiIjMGYxMTE3In0=">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f1117'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='%235fcf80'>台</text></svg>">
+<title>专属工作台</title>
+<style>
+:root{--bg:#0f1117;--bg-card:#1a1d27;--bg-card-hover:#222636;--bg-input:#14161f;--border:#2a2e3d;--border-active:#4a5170;--text:#e4e6f0;--text-secondary:#9298b3;--text-muted:#5a607a;--accent-writing:#6ba4f5;--accent-writing-bg:rgba(107,164,245,.12);--accent-drawing:#f59e6b;--accent-drawing-bg:rgba(245,158,107,.12);--accent-account:#5fcf80;--accent-account-bg:rgba(95,207,128,.12);--accent-green:#5fcf80;--accent-red:#f55f6b;--accent-save:#f5c86b;--radius:12px;--radius-sm:8px;--shadow:0 2px 12px rgba(0,0,0,.3);--safe-bottom:env(safe-area-inset-bottom,0px);--safe-top:env(safe-area-inset-top,0px)}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;padding-top:var(--safe-top);padding-bottom:calc(72px + var(--safe-bottom));overflow-x:hidden}
+input,textarea,select,button{font-family:inherit;font-size:16px;color:inherit}
+button{cursor:pointer;border:none;background:none}
+textarea{resize:vertical}
+.app-header{position:sticky;top:var(--safe-top);z-index:100;background:rgba(15,17,23,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 20px 10px}
+.app-title{font-size:1.3rem;font-weight:700;letter-spacing:.5px}
+.app-subtitle{font-size:.75rem;color:var(--text-muted);margin-top:2px}
+.tab-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
+.tab-btn{padding:9px 6px;border-radius:var(--radius-sm);background:var(--bg-card);border:1.5px solid var(--border);color:var(--text-secondary);font-size:.82rem;font-weight:600;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;min-height:42px;white-space:nowrap;overflow:hidden}
+.tab-btn ..bottom-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(26,29,39,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);padding-bottom:var(--safe-bottom);z-index:200}
+.nav-item{padding:7px 0 5px;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--text-muted);font-size:.64rem;font-weight:500;min-height:52px;justify-content:center;transition:color .15s;white-space:nowrap;overflow:hidden}
+.nav-item svg{width:20px;height:20px}
+.nav-item.active.writing{color:var(--accent-writing)}
+.nav-item.active.drawing{color:var(--accent-drawing)}
+.nav-item.active.account{color:var(--accent-account)}
+.toolbar{display:flex;gap:8px;margin-bottom:16px}
+.tool-btn{flex:1;padding:10px;border-radius:var(--radius-sm);background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);font-size:.78rem;font-weight:600;min-height:44px;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s}
+.tool-btn:active{transform:scale(.97)}
+.tool-btn svg{width:16px;height:16px}
+.toast{position:fixed;top:80px;left:50%;transform:translateX(-50%) translateY(-20px);background:var(--bg-card);border:1px solid var(--border-active);color:var(--text);padding:10px 20px;border-radius:24px;font-size:.85rem;font-weight:500;box-shadow:var(--shadow);z-index:1000;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 8px;text-align:center}
+.stat-value{font-size:1.05rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.3px;margin-top:2px;white-space:nowrap}
+.stat-label{font-size:.7rem;color:var(--text-muted)}
+.stat-value.expense{color:var(--accent-red)}
+.stat-value.income{color:var(--accent-green)}
+.stat-value.save{color:var(--accent-save)}
+.cumulative-bar{background:linear-gradient(135deg,rgba(95,207,128,.08),rgba(245,200,107,.08));border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.cum-item{text-align:center;flex:1;min-width:80px}
+.cum-value{font-size:.95rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cum-label{font-size:.68rem;color:var(--text-muted);margin-top:1px}
+.cum-divider{width:1px;height:28px;background:var(--border)}
+.acc-type-switch{display:flex;gap:8px;margin-bottom:12px}
+.acc-type-btn{flex:1;padding:9px 0;border-radius:var(--radius-sm);background:var(--bg-input);border:1.5px solid var(--border);color:var(--text-secondary);font-size:.85rem;font-weight:600;min-height:42px;transition:all .15s}
+.acc-type-btn.active.expense{background:rgba(245,95,107,.12);border-color:var(--accent-red);color:var(--accent-red)}
+.acc-type-btn.active.income{background:rgba(95,207,128,.12);border-color:var(--accent-green);color:var(--accent-green)}
+.acc-type-btn.active.save{background:rgba(245,200,107,.12);border-color:var(--accent-save);color:var(--accent-save)}
+.acc-form-row{margin-bottom:12px}
+.amount-input-wrap{display:flex;align-items:center;background:var(--bg-input);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:0 14px;transition:border-color .2s}
+.amount-input-wrap:focus-within{border-color:var(--accent-account)}
+.amount-symbol{font-size:1.2rem;font-weight:700;color:var(--text-muted);margin-right:8px}
+.amount-input{flex:1;background:none;border:none;outline:none;padding:12px 0;font-size:1.25rem;font-weight:700;font-variant-numeric:tabular-nums}
+.form-inline{display:flex;gap:8px}
+.form-inline>*{flex:1}
+.acc-text-input{width:100%;background:var(--bg-input);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;color:var(--text);font-size:.9rem;outline:none;transition:border-color .2s;min-height:44px}
+.acc-text-input:focus{border-color:var(--accent-account)}
+input[type=date].acc-text-input{-webkit-appearance:none;appearance:none}
+.category-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cat-chip{padding:6px 14px;border-radius:18px;background:var(--bg-input);border:1px solid var(--border);color:var(--text-secondary);font-size:.8rem;min-height:34px;transition:all .15s}
+.cat-chip.active{background:var(--accent-account-bg);border-color:var(--accent-account);color:var(--accent-account);font-weight:600}
+.save-btn{width:100%;padding:13px;border-radius:var(--radius-sm);background:var(--accent-account);color:#0f1117;font-size:.95rem;font-weight:700;min-height:48px;transition:all .15s}
+.save-btn:active{transform:scale(.98);opacity:.9}
+.save-btn.editing{background:var(--accent-save)}
+.acc-record{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin-bottom:8px}
+.acc-record-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.acc-record-icon.expense{background:rgba(245,95,107,.12)}
+.acc-record-icon.income{background:rgba(95,207,128,.12)}
+.acc-record-icon.save{background:rgba(245,200,107,.12)}
+.acc-record-body{flex:1;min-width:0}
+.acc-record-cat{font-size:.88rem;font-weight:600;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.acc-record<section class="panel" id="panel-drawing">
+<div class="rule-card drawing">
+<div class="rule-header"><svg class="rule-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent-drawing)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg><span class="rule-title">自学板绘区</span><span class="rule-tag tag-drawing">规则已加载</span></div>
+<ul class="rule-list">
+<li><strong>工作内容</strong>：练习规划、透视/光影系统讲解、练习精准纠错、平板实操要点、步骤示范描述</li>
+<li><strong>输出风格</strong>：通俗易懂、零基础友好，讲人话、重实操</li>
+<li><strong>纠错标准</strong>：画面问题、透视错误、光影bug、构图缺陷直白指出，不委婉客套</li>
+<li><strong>纠错必配套</strong>：每个问题附带可照着改、照着练的落地方案</li>
+<li><strong>误区预警</strong>：主动提醒新手常见错误，提前规避</li>
+</ul>
+</div>
+<div class="input-section">
+<div class="input-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>输入你的板绘需求</div>
+<textarea class="text-input drawing-focus" id="drawing-input" placeholder="输入内容，例如：
+•帮我制定板绘练习规划
+•讲解一点透视
+•我的练习有什么问题：...
+•平板绘画怎么握笔发力
+•描述一下如何画一个球体光影"></textarea>
+<div class="quick-actions">
+<button class="quick-btn" onclick="quickFill('drawing','练习规划')">练习规划</button>
+<button class="quick-btn" onclick="quickFill('drawing','透视讲解')">透视讲解</button>
+<button class="quick-btn" onclick="quickFill('drawing','光影讲解')">光影讲解</button>
+<button class="quick-btn" onclick="quickFill('drawing','练习纠错')">练习纠错</button>
+<button class="quick-btn" onclick="quickFill('drawing','实操要点')">实操要点</button>
+<button class="quick-btn" onclick="quickFill('drawing','示范描述')">示范描述</button>
+</div>
+</div>
+<div class="section-header"><div class="section-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>历史记录</div><span class="count-badge" id="drawing-count">0条</span></div>
+<div class="record-list" id="drawing-list"></div>
+</section>
+<section class="panel" id="panel-account">
+<div class="rule-card account">
+<div class="rule-header"><svg class="rule-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent-account)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span class="rule-title">我的账户·记账区</span><span class="rule-tag tag-account">纯自用记账</span></div>
+<ul class="rule-list">
+  <li><strong>每日记录</strong>：当日开支、收入、存钱，可新增、修改、删除</li>
+<li><strong>自动统计</strong>：当日收支明细、当日总消费、当日净结余实时更新</li>
+<li><strong>自动累积</strong>：累计总存钱、累计总开支、累计总收入永久叠加</li>
+<li><strong>复盘查询</strong>：任意日期的收支记录随时调取</li>
+<li><strong>数据安全</strong>：仅记录与统计，不篡改录入数据，历史永久保留</li>
+</ul>
+</div>
+<div class="stat-grid">
+<div class="stat-card"><div class="stat-label">今日支出</div><div class="stat-value expense" id="stat-today-expense">¥0</div></div>
+<div class="stat-card"><div class="stat-label">今日收入</div><div class="stat-value income" id="stat-today-income">¥0</div></div>
+<div class="stat-card"><div class="stat-label">今日净结余</div><div class="stat-value" id="stat-today-balance">¥0</div></div>
+</div>
+<div class="cumulative-bar">
+<div class="cum-item"><div class="cum-value" style="color:var(--accent-save);" id="cum-save">¥0</div><div class="cum-label">累计存钱</div></div>
+<div class="cum-divider"></div>
+<div class="cum-item"><div class="cum-value" style="color:var(--accent-red);" id="cum-expense">¥0</div><div class="cum-label">累计开支</div></div>
+<div class="cum-divider"></div>
+<div class="cum-item"><div class="cum-value" style="color:var(--accent-green);" id="cum-income">¥0</div><div class="cum-label">累计收入</div></div>
+<div class="cum-divider"></div>
+<div class="cum-item"><div class="cum-value" id="cum-days">0</div><div class="cum-label">记账天数</div></div>
+</div>
+<div class="input-section">
+<div class="input-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>记一笔</div>
+<div class="acc-type-switch">
+<button class="acc-type-btn expense active" id="acc-type-expense" onclick="setAccType('expense')">支出</button>
+<button class="acc-type-btn income" id="acc-type-income" onclick="setAccType('income')">收入</button>
+<button class="acc-type-btn save" id="acc-type-save" onclick="setAccType('save')">存钱</button>
+</div>
+<div class="acc-form-row"><div class="amount-input-wrap"><span class="amount-symbol">¥</span><input type="number" class="amount-input" id="acc-amount" inputmode="decimal" placeholder="0.00" min="0" step="0.01"></div></div>
+<div class="acc-form-row"><div class="category-chips" id="acc-categories"></div></div>
+<div class="acc-form-row form-inline"><input type="date" class="acc-text-input" id="acc-date"><input type="text" class="acc-text-input" id="acc-note" placeholder="备注（可选）" maxlength="50"></div>
+<button class="save-btn" id="acc-save-btn" onclick="saveAccountRecord()">保存记录</button>
+</div>
+  <div class="section-header"><div class="section-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>今日明细</div><span class="count-badge" id="acc-today-count">0笔</span></div>
+<div id="today-records"></div>
+<div class="input-section" style="margin-top:16px;">
+<div class="input-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>复盘查询·任意日期</div>
+<div class="form-inline"><input type="date" class="acc-text-input" id="query-date"><button class="save-btn" style="background:var(--bg-card);color:var(--text);border:1px solid var(--border-active);flex:0 0 90px;" onclick="queryHistory()">查询</button></div>
+<div id="history-result" style="margin-top:12px;"></div>
+</div>
+</section>
+</main>
+<nav class="bottom-nav">
+<button class="nav-item active writing" id="nav-writing" onclick="switchTab('writing')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>写作</span></button>
+<button class="nav-item drawing" id="nav-drawing" onclick="switchTab('drawing')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg><span>板绘</span></button>
+<button class="nav-item account" id="nav-account" onclick="switchTab('account')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>记账</span></button>
+</nav>
+<div class="toast" id="toast"></div>
+<script>
+const STORAGE_KEY='wb_workbench_v1';let state={activeTab:'writing',writingMode:'default',writingRecords:[],drawingRecords:[],accountRecords:[]};let accType='expense';let accCategory='';let accEditingId=null;const ACC_CATEGORIES={expense:['餐饮','交通','购物','日用','娱乐','医疗','学习','其他'],income:['工资','副业','红包','报销','其他'],save:['定期','活期','目标储蓄','其他']};const ACC_TYPE_META={expense:{label:'支出',icon:'−'},income:{label:'收入',icon:'+'},save:{label:'存钱',icon:'◆'}};const _today=new Date();const _fmtDate=(d)=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;const SAMPLE_DATA={accountRecords:[{id:Date.now()-5000,type:'expense',amount:25,category:'餐饮',note:'午饭',date:_fmtDate(_today),ts:Date.now()-5000},{id:Date.now()-4000,type:'expense',amount:8,category:'交通',note:'地铁',date:_fmtDate(_today),ts:Date.now()-4000},{id:Date.now()-3000,type:'save',amount:50,category:'目标储蓄',note:'每日强制储蓄',date:_fmtDate(_today),ts:Date.now()-3000}],writingRecords:[{id:Date.now()-86400000,type:'梳理大纲',input:'主线：少年从乡村出发，寻找失踪的姐姐，途中发现姐姐卷入了一场跨城邦的秘术阴谋。',output:'## 故事大纲梳理\n\n### 一、核心主线\n少年寻姐→卷入秘术阴谋→揭开真相→抉择与成长\n\n### 二、三幕结构\n\n**第一幕：出发**\n- 触发事件：收到姐姐最后一封信，信中暗藏密语\n- 情节点1：少年离开乡村，踏上寻姐之路\n\n**第二幕：深入**\n- 线索链：信件密语→城邦档案→地下秘术集会\n- 中点反转：发现姐姐不是受害者，而是主动参与者\n- 情节点2：少年被迫选边站\n\n**第三幕：抉择**\n- 高潮：秘术仪式现场，少年与姐姐对峙\n- 结局：牺牲/妥协/破局（可选分支）\n\n### 三、潜在风险点\n- 第二幕中点前节奏可能拖沓，建议在「城邦档案」环节加入追兵施压',mode:'default',date:new Date(Date.now()-86400000).toISOString()}],drawingRecords:[{id:Date.now()-43200000,type:'练习纠错',input:'临摹了一个球体，但看起来像平面圆盘，没有体积感。',output:'## 问题诊断\n\n**核心问题：光影层次缺失，球体缺少明暗交界线。**\n\n### 具体问题\n1. **明暗交界线没画**—球体最暗的那条弧线被跳过了\n2. **反光过强**—暗面底部画得太亮\n3. **投影太浅**—球体下方投影不够暗\n\n### 修改方案\n\n**第一步**：定光源方向（左上45°）\n**第二步**：画明暗交界线（最暗的弧线）\n**第三步**：暗面渐变（反光不能亮过亮面）\n**第四步**：投影（正下方最暗，向外渐浅）\n\n> 口诀：亮面→灰面→明暗交界（最暗）→暗面→反光→投影',date:new  
+Date(Date.now()-43200000).toISOString()}]};
+function loadState(){try{const saved=localStorage.getItem(STORAGE_KEY);if(saved){state={...state,...JSON.parse(saved)}}else{state.writingRecords=SAMPLE_DATA.writingRecords;state.drawingRecords=SAMPLE_DATA.drawingRecords;state.accountRecords=SAMPLE_DATA.accountRecords;saveState()}}catch(e){}}
+function saveState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}catch(e){showToast('存储不足，建议导出备份')}}
+const ALL_TABS=['writing','drawing','account'];
+function switchTab(tab){state.activeTab=tab;ALL_TABS.forEach(t=>{const tb=document.getElementById('tab-'+t),nb=document.getElementById('nav-'+t),p=document.getElementById('panel-'+t);if(tb)tb.classList.toggle('active',tab===t);if(nb)nb.classList.toggle('active',tab===t);if(p)p.classList.toggle('active',tab===t)});if(tab==='account')renderAccountPanel();saveState()}
+function setMode(m){state.writingMode=m;document.getElementById('mode-default').classList.toggle('active',m==='default');document.getElementById('mode-concise').classList.toggle('active',m==='concise');saveState();showToast(m==='concise'?'已切换：精简版':'已切换：结构化')}
+function quickFill(tab,text){const input=document.getElementById(tab+'-input');const prefixes={'整理设定':'请帮我整理以下小说设定：\n','润色文字':'请帮我润色以下文字：\n','梳理大纲':'请帮我梳理故事大纲，主线是：\n','整合灵感':'我有一些零散灵感，请帮我整合：\n','练习规划':'请帮我制定板绘练习规划，我的当前水平：\n','透视讲解':'请讲解透视原理，重点是：\n','光影讲解':'请讲解光影知识，我想了解：\n','练习纠错':'我的练习存在以下问题，请帮我纠错：\n','实操要点':'请讲解板绘实操要点，关于：\n','示范描述':'请描述绘画示范步骤，画：\n'};input.value=(prefixes[text]||'')+(input.value&&!input.value.startsWith(prefixes[text]||'x')?input.value:'');input.focus();input.scrollIntoView({behavior:'smooth',block:'center'})}
+function saveRecord(tab){const input=document.getElementById(tab+'-input');const text=input.value.trim();if(!text){showToast('请先输入内容');input.focus();return}let type='其他';const typeMap={writing:[['设定','整理设定'],['润色','润色文字'],['大纲','梳理大纲'],['灵感','整合灵感']],drawing:[['规划','练习规划'],['透视','透视讲解'],['光影','光影讲解'],['纠错','练习纠错'],['实操','实操要点'],['示范','示范描述']]};for(const[k,l]of typeMap[tab]){if(text.includes(k)){type=l;break}}const record={id:Date.now(),type:type,input:text,output:generateOutput(tab,type,text),mode:tab==='writing'?state.writingMode:null,date:new Date().toISOString()};const list=tab==='writing'?state.writingRecords:state.drawingRecords;list.unshift(record);if(list.length===30)showToast('数据已30条，建议导出备份');saveState();renderRecords(tab);input.value='';showToast('已保存到记录')}
+function generateOutput(tab,type,input){return tab==='writing'?generateWritingOutput(type,input,state.writingMode):generateDrawingOutput(type,input)}
+function generateWritingOutput(type,input,mode){const c=mode==='concise';const t=new Date().toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});const templates={'整理设定':c?`## 设定整理（精简）\n\n- **核心设定**：${input.slice(0,50)}...\n- **关键要素**：待补充\n- **潜在冲突**：待补充`:`## 小说设定整理\n\n### 一、设定概要\n${input}\n\n### 二、关键要素提取\n- **人物**：（待提取）\n- **世界观**：（待提取）\n- **核心规则**：（待提取）\n\n### 三、设定间关联\n- 逻辑链路：（梳理因果关系）\n\n### 四、潜在矛盾点\n- 检查是否有自相矛盾\n\n> 记录时间：${t}`,'润色文字':c?`## 润色建议（精简）\n\n**原文**：${input.slice(0,60)}...\n**润色后**：（待处理）\n**改动要点**：待标注`:`## 文字润色\n\n### 原文\n${input}\n\n### 润色后\n（待处理）\n\n### 改动说明\n|原文|润色后|改动原因|\n|---|---|---|\n\n### 润色原则\n1.保留原意与风格\n2.优化节奏与语感\n3.修正语病冗余\n4.增强画面感\n\n> 记录时间：${t}`,'梳理大纲':c?`## 大纲梳理（精简）\n\n- **主线**：${input.slice(0,50)}...\n- **三幕结构**：出发→深入→抉择\n- **关键转折**：待补充`:`## 故事大纲梳理\n\n### 主线输入\n${input}\n\n### 三幕结构建议\n\n**第一幕：设定与出发**\n- 开场：建立日常世界\n- 触发事件：打破平衡\n- 情节点1：主角行动\n\n**第二幕：对抗与深入**\n- 上升动作：障碍与尝试\n- 中点：重大转折\n- 情节点2：最低谷\n\n**第三幕：解决**\n- 高潮：最终对决\n- 结局：新平衡\n\n> 记录时间：${t}`,'整合灵感':c?`## 灵感整合（精简）\n\n- **灵感片段**：${input.slice(0,50)}...\n- **核心主题**：待提炼\n- **可发展方向**：待梳理`:`## 零散灵感整合\n\n### 灵感原始记录\n${input}\n\n### 主题提炼\n- **核心主题**：（提取共通主题）\n- **情绪基调**：（恐惧/温暖/荒诞/...）\n\n### 灵感分类\n|灵感片段|可用于|优先级|\n|---|---|---|\n\n### 整合方向建议\n1.可融合为短篇骨架\n2.可拆分为独立场景\n3.可作为长篇支线\n\n> 记录时间：${t}`};return templates[type]||`## 写作记录\n\n**类型**：${type}\n**内容**：${input}\n\n> 记录时间：${t}`}
+function generateDrawingOutput(type,input){const t=new Date().toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});const templates={'练习规划':`## 板绘练习规划\n\n### 你的输入\n${input}\n\n### 阶段规划\n\n**第一阶段：基础线稿（2-3周）**\n- 目标：线条稳定、起形准确\n- 每天30分钟临摹线稿\n\n**第二阶段：透视基础（3-4周）**\n- 一点→两点→三点透视\n- 每天画5个方块不同角度\n\n**第三阶段：光影体积（3-4周）**\n- 球体/方体/圆柱光影\n- 明暗五调子\n\n**第四阶段：综合临摹（持续）**\n- 带光影完整临摹\n\n### 每日建议\n- 热身10分钟\n- 专项30分钟\n- 临摹20分钟\n\n> 记录时间：${t}`,'透视讲解':`## 透视讲解\n\n### 你的问题\n${input}\n\n### 一点透视\n想象站在笔直马路上往前看：\n- 电线杆越远越靠近\n- 最终在远处一个点汇合\n- 这个点叫「消失点」\n\n**要点**：只有一个消失点，纵深线都指向它\n\n### 举例：画走廊\n1.画面中央偏上定消失点\n2.画正面矩形（门框）\n3.四角连线到消失点\n4.截取深度\n5.连接画尽头\n\n### 常见错误\n- 消失点不固定\n- 水平线变弯\n\n> 记录时间：${t}`,'光影讲解':`## 光影知识讲解\n\n### 你的问题\n${input}\n\n### 明暗五调子（球体为例，光从左上来）\n1.**亮面**：最亮\n2.**灰面**：中等\n3.**明暗交界线**：最暗的弧线\n4.**暗面**：光照不到\n5.**反光**：比暗面稍亮\n\n### 口诀\n> 亮→灰→明暗交界（最暗）→暗面→反光→投影\n\n### 投影\n- 靠近物体最暗，向外渐浅\n- 方向和光源相反\n\n### 新手常见问题\n- 明暗交界线不敢画暗\n- 反光画太亮\n- 投影画太浅\n\n> 记录时间：${t}`,'练习纠错':`## 练习纠错\n\n### 你的问题\n${input}\n\n### 常见问题对照\n\n**线稿阶段**\n- 线条抖→手腕发力，应手臂带动\n- 比例不准→先定整体再画细节\n\n**透视阶段**\n- 立体感不对→检查消失点\n- 转折奇怪→检查透视线\n\n**光影阶段**\n- 画面发灰→对比不够\n- 体积感弱→明暗交界线没画\n- 物体飘着→投影太浅\n\n请描述更具体的问题，我给针对性方案。\n\n> 记录时间：${t}`,'实操要点':`## 板绘实操要点\n\n### 你的问题\n${input}\n\n### 握笔与发力\n- 手腕放松，手臂带动画长线\n- 短线用手腕，长线用肘部\n\n### 笔刷设置\n- 起稿：细线软笔刷（60-80%）\n- 铺色：大笔刷（100%）\n- 过渡：软笔刷（30-50%）\n\n### 图层管理\n- 线稿/底色/阴影分图层\n\n### 常见误区\n- 放大太多画细节→退远看整体\n- 频繁撤销→擦掉重来\n- 一直用一个笔刷→分阶段换\n\n> 记录时间：${t}`,'示范描述':`## 绘画示范步骤\n\n### 你的需求\n${input}\n\n### 步骤\n1.**起形**：定四极，几何形概括\n2.**定光源**：标光线方向\n3.**铺暗面**：整体铺中间灰\n4.**加深明暗交界线**：画面最暗处\n5.**过渡**：软笔刷亮暗过渡\n6.**画投影**：正下方最暗，向外渐浅\n7.**收尾**：检查对比度\n\n> 记录时间：${t}`};return templates[type]||`## 板绘记录\n\n**类型**：${type}\n**内容**：${input}\n\n> 记录时间：${t}`}
+function renderRecords(tab){const list=tab==='writing'?state.writingRecords:state.drawingRecords;const container=document.getElementById(tab+'-list');const countEl=document.getElementById(tab+'-count');countEl.textContent=list.length+'条';if(list.length===0){const ic=tab==='writing'?'var(--accent-writing)':'var(--accent-drawing)';container.innerHTML=`<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="${ic}" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg><p>暂无记录<br>在上方输入内容后保存即可</p ></div>`;return}container.innerHTML=list.map(r=>{const ds=new Date(r.date).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});const mt=r.mode?`<span class="record-mode">${r.mode==='concise'?'精简版':'结构化'}</span>`:'';return `<div class="record-card ${tab}"><div class="record-meta"><span class="record-type ${tab==='writing'?'tag-writing':'tag-drawing'}">${r.type}</span><span class="record-date">${ds}</span>${mt}<button class="record-delete" onclick="deleteRecord('${tab}',${r.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
