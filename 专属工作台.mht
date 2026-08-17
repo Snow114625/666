@@ -1,0 +1,772 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://metadata-maximize-performer-rhode.trycloudflare.com/
+Subject: =?utf-8?Q?=E4=B8=93=E5=B1=9E=E5=B7=A5=E4=BD=9C=E5=8F=B0?=
+Date: Mon, 17 Aug 2026 17:02:24 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--jfaxGGv5k37tzqhTmhA980tdW2GBwcMjR7A4UNnvsi----"
+
+
+------MultipartBoundary--jfaxGGv5k37tzqhTmhA980tdW2GBwcMjR7A4UNnvsi----
+Content-Type: text/html
+Content-ID: <frame-B9B345F0E12CA96EB5C7DE336A582DBD@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: https://metadata-maximize-performer-rhode.trycloudflare.com/
+
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-5ae8a577-a5d1-418d-8dfe-2fdd2fd82cc9@mhtml.blink" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="工作台">
+  <meta name="theme-color" content="#0f1117">
+  <meta name="description" content="写作创作区 + 自学板绘区 + 我的账户记账区，三大固定板块">
+  <link rel="manifest" href="https://metadata-maximize-performer-rhode.trycloudflare.com/manifest.json">
+  <link rel="apple-touch-icon" href="https://metadata-maximize-performer-rhode.trycloudflare.com/icon-192.png">
+  <link rel="icon" type="image/png" href="https://metadata-maximize-performer-rhode.trycloudflare.com/icon-192.png">
+  <title>专属工作台</title>
+
+  
+</head>
+<body>
+
+  <!-- ====================== 顶部标题栏 ====================== -->
+  <header class="app-header">
+    <div class="app-title">专属工作台</div>
+    <div class="app-subtitle">写作创作 · 自学板绘 · 账户记账 · 三大固定板块</div>
+
+    <div class="tab-bar">
+      <button class="tab-btn writing active" id="tab-writing">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+        </svg>
+        <span>写作</span>
+      </button>
+      <button class="tab-btn drawing" id="tab-drawing">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle>
+        </svg>
+        <span>板绘</span>
+      </button>
+      <button class="tab-btn account" id="tab-account">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+        <span>记账</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ====================== 主内容 ====================== -->
+  <main class="main-content">
+
+    <!-- PWA 安装提示 -->
+    <div class="pwa-hint" id="pwa-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v20M2 12h20"></path><path d="M12 2a10 10 0 1 0 10 10"></path>
+      </svg>
+      <div>
+        <strong>添加到主屏幕</strong>：浏览器菜单 →「添加到主屏幕」，即可像 App 一样全屏使用，离线也能打开。三大板块：写作创作 · 自学板绘 · 我的账户记账。
+      </div>
+      <button class="close-hint">×</button>
+    </div>
+
+    <!-- 工具栏 -->
+    <div class="toolbar">
+      <button class="tool-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        导出备份
+      </button>
+      <button class="tool-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+        导入恢复
+      </button>
+      <input type="file" id="import-file" accept=".json" style="display:none">
+      <button class="tool-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+        清空数据
+      </button>
+    </div>
+
+    <!-- ============ 写作栏目面板 ============ -->
+    <section class="panel active" id="panel-writing">
+
+      <!-- 规则卡片 -->
+      <div class="rule-card writing">
+        <div class="rule-header">
+          <svg class="rule-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent-writing)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+          <span class="rule-title">写作栏目</span>
+          <span class="rule-tag tag-writing">规则已加载</span>
+        </div>
+        <ul class="rule-list">
+          <li><strong>工作内容</strong>：整合零散灵感、梳理故事大纲、整理全套小说设定、精细化文字润色</li>
+          <li><strong>默认输出</strong>：客观、结构化、条理清晰的完整版</li>
+          <li><strong>精简切换</strong>：说「精简版」立刻压缩，保留核心去除冗余</li>
+          <li><strong>主动纠错</strong>：剧情逻辑 bug、设定冲突、文案语病、大纲漏洞直接点明 + 给落地修改方案</li>
+          <li><strong>案例辅助</strong>：晦涩处配贴合案例，不发散无关内容</li>
+        </ul>
+        <div class="mode-switch">
+          <button class="mode-btn active" id="mode-default">结构化（默认）</button>
+          <button class="mode-btn" id="mode-concise">精简版</button>
+        </div>
+      </div>
+
+      <!-- 输入区 -->
+      <div class="input-section">
+        <div class="input-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+          输入你的写作需求
+        </div>
+        <textarea class="text-input" id="writing-input" placeholder="输入内容，例如：
+• 帮我整理以下小说设定...
+• 润色这段文字...
+• 梳理故事大纲，主线是...
+• 我有一些零散灵感，帮我整合..."></textarea>
+        <div class="quick-actions">
+          <button class="quick-btn">整理设定</button>
+          <button class="quick-btn">润色文字</button>
+          <button class="quick-btn">梳理大纲</button>
+          <button class="quick-btn">整合灵感</button>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          历史记录
+        </div>
+        <span class="count-badge" id="writing-count">1 条</span>
+      </div>
+      <div class="record-list" id="writing-list">
+          <div class="record-card writing" data-id="1786870890829">
+            <div class="record-meta">
+              <span class="record-type tag-writing">梳理大纲</span>
+              <span class="record-date">08/16 17:01</span>
+              <span class="record-mode">结构化</span>
+              <button class="record-delete" title="删除">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+            <div class="record-input-text">主线：少年从乡村出发，寻找失踪的姐姐，途中发现姐姐卷入了一场跨城邦的秘术阴谋。</div>
+            <div class="record-output"><p style="margin:8px 0;"></p><h2>故事大纲梳理</h2><p></p><p style="margin:8px 0;"></p><h3>一、核心主线</h3>
+少年寻姐 → 卷入秘术阴谋 → 揭开真相 → 抉择与成长<p></p><p style="margin:8px 0;"></p><h3>二、三幕结构</h3><p></p><p style="margin:8px 0;"><strong>第一幕：出发</strong>
+</p><ul><li>触发事件：收到姐姐最后一封信，信中暗藏密语</li>
+<li>情节点1：少年离开乡村，踏上寻姐之路</li>
+</ul>
+<strong>第二幕：深入</strong>
+<ul><li>线索链：信件密语 → 城邦档案 → 地下秘术集会</li>
+<li>中点反转：发现姐姐不是受害者，而是主动参与者</li>
+<li>情节点2：少年被迫选边站</li>
+</ul>
+<strong>第三幕：抉择</strong>
+<ul><li>高潮：秘术仪式现场，少年与姐姐对峙</li>
+<li>结局：牺牲 / 妥协 / 破局（可选分支）</li>
+</ul>
+<h3>三、潜在风险点</h3>
+<ul><li>第二幕中点前节奏可能拖沓，建议在「城邦档案」环节加入追兵施压</li></ul><p></p></div>
+          </div>
+        </div>
+
+    </section>
+
+    <!-- ============ 板绘自学栏目面板 ============ -->
+    <section class="panel" id="panel-drawing">
+
+      <!-- 规则卡片 -->
+      <div class="rule-card drawing">
+        <div class="rule-header">
+          <svg class="rule-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent-drawing)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle>
+          </svg>
+          <span class="rule-title">板绘自学栏目</span>
+          <span class="rule-tag tag-drawing">规则已加载</span>
+        </div>
+        <ul class="rule-list">
+          <li><strong>工作内容</strong>：练习规划、透视/光影系统讲解、练习精准纠错、平板实操要点、步骤示范描述</li>
+          <li><strong>输出风格</strong>：通俗易懂、零基础友好，讲人话、重实操</li>
+          <li><strong>纠错标准</strong>：画面问题、透视错误、光影 bug、构图缺陷直白指出，不委婉客套</li>
+          <li><strong>纠错必配套</strong>：每个问题附带可照着改、照着练的落地方案</li>
+          <li><strong>误区预警</strong>：主动提醒新手常见错误，提前规避</li>
+        </ul>
+      </div>
+
+      <!-- 输入区 -->
+      <div class="input-section">
+        <div class="input-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+          输入你的板绘需求
+        </div>
+        <textarea class="text-input drawing-focus" id="drawing-input" placeholder="输入内容，例如：
+• 帮我制定板绘练习规划
+• 讲解一点透视
+• 我的练习有什么问题：...
+• 平板绘画怎么握笔发力
+• 描述一下如何画一个球体光影"></textarea>
+        <div class="quick-actions">
+          <button class="quick-btn">练习规划</button>
+          <button class="quick-btn">透视讲解</button>
+          <button class="quick-btn">光影讲解</button>
+          <button class="quick-btn">练习纠错</button>
+          <button class="quick-btn">实操要点</button>
+          <button class="quick-btn">示范描述</button>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          历史记录
+        </div>
+        <span class="count-badge" id="drawing-count">1 条</span>
+      </div>
+      <div class="record-list" id="drawing-list">
+          <div class="record-card drawing" data-id="1786914090838">
+            <div class="record-meta">
+              <span class="record-type tag-drawing">练习纠错</span>
+              <span class="record-date">08/17 05:01</span>
+              
+              <button class="record-delete" title="删除">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+            <div class="record-input-text">临摹了一个球体，但看起来像平面圆盘，没有体积感。</div>
+            <div class="record-output"><p style="margin:8px 0;"></p><h2>问题诊断</h2><p></p><p style="margin:8px 0;"><strong>核心问题：光影层次缺失，球体缺少明暗交界线。</strong></p><p style="margin:8px 0;"></p><h3>具体问题</h3>
+1. <strong>明暗交界线没画</strong> — 球体最暗的那条弧线（明暗交界）被跳过了，导致亮面和暗面之间没有过渡
+2. <strong>反光过强</strong> — 暗面底部画得太亮，和亮面差不多亮，体积感被破坏
+3. <strong>投影太浅</strong> — 球体下方投影不够暗，球体像「飘」在桌面上<p></p><p style="margin:8px 0;"></p><h3>可落地修改方案</h3><p></p><p style="margin:8px 0;"><strong>第一步：定光源方向</strong>
+</p><ul><li>假设光从左上 45° 来</li>
+</ul>
+<strong>第二步：画明暗交界线</strong>
+<ul><li>在球体上画一条弧线（从左上到右下的弧），这条线最暗</li>
+<li>用软笔刷轻轻铺底</li>
+</ul>
+<strong>第三步：暗面渐变</strong>
+<ul><li>明暗交界线往右过渡，越往右越亮一点点（反光）</li>
+<li>但反光绝不能亮过亮面</li>
+</ul>
+<strong>第四步：投影</strong>
+<ul><li>球体正下方投影最暗，往外逐渐变浅变虚</li>
+</ul>
+<blockquote>记住口诀：<strong>亮面 → 灰面 → 明暗交界（最暗）→ 暗面 → 反光（稍亮但暗于亮面）→ 投影</strong></blockquote><p></p></div>
+          </div>
+        </div>
+
+    </section>
+
+    <!-- ============ 我的账户（记账区）面板 ============ -->
+    <section class="panel" id="panel-account">
+
+      <!-- 规则卡片 -->
+      <div class="rule-card account">
+        <div class="rule-header">
+          <svg class="rule-icon" viewBox="0 0 24 24" fill="none" stroke="var(--accent-account)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          <span class="rule-title">我的账户 · 记账区</span>
+          <span class="rule-tag tag-account">纯自用记账</span>
+        </div>
+        <ul class="rule-list">
+          <li><strong>每日记录</strong>：当日开支、收入、存钱，可新增、修改、删除</li>
+          <li><strong>自动统计</strong>：当日收支明细、当日总消费、当日净结余实时更新</li>
+          <li><strong>自动累积</strong>：累计总存钱、累计总开支、累计总收入永久叠加</li>
+          <li><strong>复盘查询</strong>：任意日期的收支记录随时调取</li>
+          <li><strong>数据安全</strong>：仅记录与统计，不篡改录入数据，历史永久保留</li>
+        </ul>
+      </div>
+
+      <!-- 今日概览 -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">今日支出</div>
+          <div class="stat-value expense" id="stat-today-expense">¥33</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">今日收入</div>
+          <div class="stat-value income" id="stat-today-income">¥0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">今日净结余</div>
+          <div class="stat-value" id="stat-today-balance" style="color: var(--accent-red);">¥-33</div>
+        </div>
+      </div>
+
+      <!-- 累计汇总 -->
+      <div class="cumulative-bar">
+        <div class="cum-item">
+          <div class="cum-value" style="color: var(--accent-save);" id="cum-save">¥50</div>
+          <div class="cum-label">累计存钱</div>
+        </div>
+        <div class="cum-divider"></div>
+        <div class="cum-item">
+          <div class="cum-value" style="color: var(--accent-red);" id="cum-expense">¥33</div>
+          <div class="cum-label">累计开支</div>
+        </div>
+        <div class="cum-divider"></div>
+        <div class="cum-item">
+          <div class="cum-value" style="color: var(--accent-green);" id="cum-income">¥0</div>
+          <div class="cum-label">累计收入</div>
+        </div>
+        <div class="cum-divider"></div>
+        <div class="cum-item">
+          <div class="cum-value" id="cum-days">1</div>
+          <div class="cum-label">记账天数</div>
+        </div>
+      </div>
+
+      <!-- 记账表单 -->
+      <div class="input-section">
+        <div class="input-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+          记一笔
+        </div>
+
+        <!-- 类型切换 -->
+        <div class="acc-type-switch">
+          <button class="acc-type-btn expense active" id="acc-type-expense">支出</button>
+          <button class="acc-type-btn income" id="acc-type-income">收入</button>
+          <button class="acc-type-btn save" id="acc-type-save">存钱</button>
+        </div>
+
+        <!-- 金额 -->
+        <div class="acc-form-row">
+          <div class="amount-input-wrap">
+            <span class="amount-symbol">¥</span>
+            <input type="number" class="amount-input" id="acc-amount" inputmode="decimal" placeholder="0.00" min="0" step="0.01">
+          </div>
+        </div>
+
+        <!-- 分类 -->
+        <div class="acc-form-row">
+          <div class="category-chips" id="acc-categories"><button class="cat-chip active">餐饮</button><button class="cat-chip ">交通</button><button class="cat-chip ">购物</button><button class="cat-chip ">日用</button><button class="cat-chip ">娱乐</button><button class="cat-chip ">医疗</button><button class="cat-chip ">学习</button><button class="cat-chip ">其他</button></div>
+        </div>
+
+        <!-- 日期 + 备注 -->
+        <div class="acc-form-row form-inline">
+          <input type="date" class="acc-text-input" id="acc-date">
+          <input type="text" class="acc-text-input" id="acc-note" placeholder="备注（可选）" maxlength="50">
+        </div>
+
+        <button class="save-btn" id="acc-save-btn">保存记录</button>
+      </div>
+
+      <!-- 今日明细 -->
+      <div class="section-header">
+        <div class="section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          今日明细
+        </div>
+        <span class="count-badge" id="acc-today-count">3 笔</span>
+      </div>
+      <div id="today-records">
+        <div class="acc-record">
+          <div class="acc-record-icon save">◆</div>
+          <div class="acc-record-body">
+            <div class="acc-record-cat">目标储蓄<span style="font-size:0.7rem;color:var(--text-muted);font-weight:400;">2026-08-17</span></div>
+            <div class="acc-record-note">每日强制储蓄</div>
+          </div>
+          <div class="acc-record-amount save">+¥50</div>
+          <div class="acc-record-ops">
+            <button class="acc-op-btn" title="修改">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button class="acc-op-btn" title="删除">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div class="acc-record">
+          <div class="acc-record-icon expense">−</div>
+          <div class="acc-record-body">
+            <div class="acc-record-cat">交通<span style="font-size:0.7rem;color:var(--text-muted);font-weight:400;">2026-08-17</span></div>
+            <div class="acc-record-note">地铁</div>
+          </div>
+          <div class="acc-record-amount expense">−¥8</div>
+          <div class="acc-record-ops">
+            <button class="acc-op-btn" title="修改">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button class="acc-op-btn" title="删除">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div class="acc-record">
+          <div class="acc-record-icon expense">−</div>
+          <div class="acc-record-body">
+            <div class="acc-record-cat">餐饮<span style="font-size:0.7rem;color:var(--text-muted);font-weight:400;">2026-08-17</span></div>
+            <div class="acc-record-note">午饭</div>
+          </div>
+          <div class="acc-record-amount expense">−¥25</div>
+          <div class="acc-record-ops">
+            <button class="acc-op-btn" title="修改">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button class="acc-op-btn" title="删除">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 历史查询 -->
+      <div class="input-section" style="margin-top: 16px;">
+        <div class="input-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          复盘查询 · 任意日期
+        </div>
+        <div class="form-inline">
+          <input type="date" class="acc-text-input" id="query-date">
+          <button class="save-btn" style="background: var(--bg-card); color: var(--text); border: 1px solid var(--border-active); flex: 0 0 90px;">查询</button>
+        </div>
+        <div id="history-result" style="margin-top: 12px;"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ====================== 底部导航 ====================== -->
+  <nav class="bottom-nav">
+    <button class="nav-item active writing" id="nav-writing">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+      </svg>
+      <span>写作</span>
+    </button>
+    <button class="nav-item drawing" id="nav-drawing">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><circle cx="11" cy="11" r="2"></circle>
+      </svg>
+      <span>板绘</span>
+    </button>
+    <button class="nav-item account" id="nav-account">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+      </svg>
+      <span>记账</span>
+    </button>
+  </nav>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  
+
+
+</body></html>
+------MultipartBoundary--jfaxGGv5k37tzqhTmhA980tdW2GBwcMjR7A4UNnvsi----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: cid:css-5ae8a577-a5d1-418d-8dfe-2fdd2fd82cc9@mhtml.blink
+
+@charset "utf-8";
+
+:root { --bg: #0f1117; --bg-card: #1a1d27; --bg-card-hover: #222636; --bg-input: #14161f; --border: #2a2e3d; --border-active: #4a5170; --text: #e4e6f0; --text-secondary: #9298b3; --text-muted: #5a607a; --accent-writing: #6ba4f5; --accent-writing-bg: rgba(107, 164, 245, 0.12); --accent-drawing: #f59e6b; --accent-drawing-bg: rgba(245, 158, 107, 0.12); --accent-account: #5fcf80; --accent-account-bg: rgba(95, 207, 128, 0.12); --accent-green: #5fcf80; --accent-red: #f55f6b; --accent-save: #f5c86b; --radius: 12px; --radius-sm: 8px; --shadow: 0 2px 12px rgba(0,0,0,0.3); --safe-bottom: env(safe-area-inset-bottom, 0px); --safe-top: env(safe-area-inset-top, 0px); }
+
+* { margin: 0px; padding: 0px; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html { font-size: 16px; text-size-adjust: 100%; }
+
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; padding-top: var(--safe-top); padding-bottom: calc(72px + var(--safe-bottom)); overflow-x: hidden; }
+
+input, textarea, select, button { font-family: inherit; font-size: 16px; color: inherit; }
+
+button { cursor: pointer; border: none; background: none; }
+
+textarea { resize: vertical; }
+
+.app-header { position: sticky; top: var(--safe-top); z-index: 100; background: rgba(15, 17, 23, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 14px 20px 10px; }
+
+.app-title { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.5px; }
+
+.app-subtitle { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+.tab-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; }
+
+.tab-btn { padding: 9px 6px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1.5px solid var(--border); color: var(--text-secondary); font-size: 0.82rem; font-weight: 600; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 42px; white-space: nowrap; overflow: hidden; }
+
+.tab-btn .tab-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+.tab-btn.active.writing { background: var(--accent-writing-bg); border-color: var(--accent-writing); color: var(--accent-writing); }
+
+.tab-btn.active.drawing { background: var(--accent-drawing-bg); border-color: var(--accent-drawing); color: var(--accent-drawing); }
+
+.tab-btn.active.account { background: var(--accent-account-bg); border-color: var(--accent-account); color: var(--accent-account); }
+
+.tab-btn span { white-space: nowrap; }
+
+.main-content { max-width: 860px; margin: 0px auto; padding: 16px 16px 40px; }
+
+.panel { display: none; }
+
+.panel.active { display: block; animation: 0.25s ease 0s 1 normal none running fadeIn; }
+
+@keyframes fadeIn { 
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+.rule-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 16px; }
+
+.rule-card.writing { border-left: 3px solid var(--accent-writing); }
+
+.rule-card.drawing { border-left: 3px solid var(--accent-drawing); }
+
+.rule-card.account { border-left: 3px solid var(--accent-account); }
+
+.rule-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+
+.rule-icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+.rule-title { font-size: 1rem; font-weight: 700; }
+
+.rule-tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; font-weight: 600; margin-left: auto; }
+
+.tag-writing { background: var(--accent-writing-bg); color: var(--accent-writing); }
+
+.tag-drawing { background: var(--accent-drawing-bg); color: var(--accent-drawing); }
+
+.tag-account { background: var(--accent-account-bg); color: var(--accent-account); }
+
+.rule-list { list-style: none; }
+
+.rule-list li { padding: 6px 0px; font-size: 0.85rem; color: var(--text-secondary); display: flex; gap: 8px; line-height: 1.5; }
+
+.rule-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted); margin-top: 9px; flex-shrink: 0; }
+
+.rule-list li strong { color: var(--text); }
+
+.mode-switch { display: flex; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+.mode-btn { flex: 1 1 0%; padding: 8px 12px; border-radius: var(--radius-sm); background: var(--bg-input); border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8rem; font-weight: 600; min-height: 44px; transition: 0.15s; }
+
+.mode-btn.active { background: var(--accent-writing-bg); border-color: var(--accent-writing); color: var(--accent-writing); }
+
+.input-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 16px; }
+
+.input-label { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+
+.input-label svg { width: 16px; height: 16px; }
+
+.text-input { width: 100%; background: var(--bg-input); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; color: var(--text); font-size: 16px; min-height: 120px; transition: border-color 0.2s; line-height: 1.6; }
+
+.text-input:focus { outline: none; border-color: var(--accent-writing); }
+
+.text-input.drawing-focus:focus { border-color: var(--accent-drawing); }
+
+.quick-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+.quick-btn { padding: 8px 14px; border-radius: 20px; background: var(--bg-input); border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8rem; font-weight: 500; min-height: 36px; transition: 0.15s; }
+
+.quick-btn:active { transform: scale(0.96); }
+
+.section-header { display: flex; align-items: center; justify-content: space-between; margin: 24px 0px 12px; }
+
+.section-title { font-size: 0.9rem; font-weight: 700; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
+
+.section-title svg { width: 18px; height: 18px; }
+
+.count-badge { font-size: 0.7rem; background: var(--bg-card); color: var(--text-muted); padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border); }
+
+.record-list { display: flex; flex-direction: column; gap: 12px; }
+
+.record-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; position: relative; overflow: hidden; }
+
+.record-card.writing { border-left: 3px solid var(--accent-writing); }
+
+.record-card.drawing { border-left: 3px solid var(--accent-drawing); }
+
+.record-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+
+.record-type { font-size: 0.7rem; padding: 2px 8px; border-radius: 8px; font-weight: 600; }
+
+.record-date { font-size: 0.75rem; color: var(--text-muted); }
+
+.record-mode { font-size: 0.7rem; color: var(--text-muted); padding: 1px 6px; border-radius: 6px; border: 1px solid var(--border); }
+
+.record-delete { margin-left: auto; color: var(--text-muted); padding: 4px; min-width: 32px; min-height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px; transition: 0.15s; }
+
+.record-delete:active { background: var(--accent-red); color: white; }
+
+.record-delete svg { width: 16px; height: 16px; }
+
+.record-input-text { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; padding: 8px 10px; background: var(--bg-input); border-radius: var(--radius-sm); line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+
+.record-output { font-size: 0.88rem; color: var(--text); line-height: 1.7; white-space: pre-wrap; word-break: break-word; }
+
+.record-output h1, .record-output h2, .record-output h3 { margin-top: 12px; margin-bottom: 6px; font-weight: 700; }
+
+.record-output h1 { font-size: 1.05rem; }
+
+.record-output h2 { font-size: 0.95rem; color: var(--accent-writing); }
+
+.record-output h3 { font-size: 0.88rem; color: var(--text-secondary); }
+
+.record-output ul, .record-output ol { margin: 6px 0px 6px 20px; }
+
+.record-output li { margin: 3px 0px; }
+
+.record-output strong { color: var(--accent-green); }
+
+.record-output code { background: var(--bg-input); padding: 1px 6px; border-radius: 4px; font-size: 0.82rem; font-family: "SF Mono", "Fira Code", monospace; }
+
+.record-output blockquote { border-left: 3px solid var(--accent-writing); margin: 8px 0px; padding: 6px 12px; background: var(--bg-input); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--text-secondary); }
+
+.empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); }
+
+.empty-state svg { width: 48px; height: 48px; opacity: 0.3; margin-bottom: 12px; }
+
+.empty-state p { font-size: 0.85rem; }
+
+.bottom-nav { position: fixed; bottom: 0px; left: 0px; right: 0px; background: rgba(26, 29, 39, 0.95); backdrop-filter: blur(20px); border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(3, 1fr); padding-bottom: var(--safe-bottom); z-index: 200; }
+
+.nav-item { padding: 7px 0px 5px; display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--text-muted); font-size: 0.64rem; font-weight: 500; min-height: 52px; justify-content: center; transition: color 0.15s; white-space: nowrap; overflow: hidden; }
+
+.nav-item svg { width: 20px; height: 20px; }
+
+.nav-item.active.writing { color: var(--accent-writing); }
+
+.nav-item.active.drawing { color: var(--accent-drawing); }
+
+.nav-item.active.account { color: var(--accent-account); }
+
+.toolbar { display: flex; gap: 8px; margin-bottom: 16px; }
+
+.tool-btn { flex: 1 1 0%; padding: 10px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.78rem; font-weight: 600; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: 0.15s; }
+
+.tool-btn:active { transform: scale(0.97); }
+
+.tool-btn svg { width: 16px; height: 16px; }
+
+.toast { position: fixed; top: 80px; left: 50%; transform: translateX(-50%) translateY(-20px); background: var(--bg-card); border: 1px solid var(--border-active); color: var(--text); padding: 10px 20px; border-radius: 24px; font-size: 0.85rem; font-weight: 500; box-shadow: var(--shadow); z-index: 1000; opacity: 0; transition: 0.3s; pointer-events: none; white-space: nowrap; }
+
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0px); }
+
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+
+.stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 8px; text-align: center; }
+
+.stat-value { font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.3px; margin-top: 2px; white-space: nowrap; }
+
+.stat-label { font-size: 0.7rem; color: var(--text-muted); }
+
+.stat-value.expense { color: var(--accent-red); }
+
+.stat-value.income { color: var(--accent-green); }
+
+.stat-value.save { color: var(--accent-save); }
+
+.cumulative-bar { background: linear-gradient(135deg, rgba(95, 207, 128, 0.08), rgba(245, 200, 107, 0.08)); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+.cum-item { text-align: center; flex: 1 1 0%; min-width: 80px; }
+
+.cum-value { font-size: 0.95rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.cum-label { font-size: 0.68rem; color: var(--text-muted); margin-top: 1px; }
+
+.cum-divider { width: 1px; height: 28px; background: var(--border); }
+
+.acc-type-switch { display: flex; gap: 8px; margin-bottom: 12px; }
+
+.acc-type-btn { flex: 1 1 0%; padding: 9px 0px; border-radius: var(--radius-sm); background: var(--bg-input); border: 1.5px solid var(--border); color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; min-height: 42px; transition: 0.15s; }
+
+.acc-type-btn.active.expense { background: rgba(245, 95, 107, 0.12); border-color: var(--accent-red); color: var(--accent-red); }
+
+.acc-type-btn.active.income { background: rgba(95, 207, 128, 0.12); border-color: var(--accent-green); color: var(--accent-green); }
+
+.acc-type-btn.active.save { background: rgba(245, 200, 107, 0.12); border-color: var(--accent-save); color: var(--accent-save); }
+
+.acc-form-row { margin-bottom: 12px; }
+
+.amount-input-wrap { display: flex; align-items: center; background: var(--bg-input); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 0px 14px; transition: border-color 0.2s; }
+
+.amount-input-wrap:focus-within { border-color: var(--accent-account); }
+
+.amount-symbol { font-size: 1.2rem; font-weight: 700; color: var(--text-muted); margin-right: 8px; }
+
+.amount-input { flex: 1 1 0%; background: none; border: none; outline: none; padding: 12px 0px; font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.form-inline { display: flex; gap: 8px; }
+
+.form-inline > * { flex: 1 1 0%; }
+
+.acc-text-input { width: 100%; background: var(--bg-input); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; color: var(--text); font-size: 0.9rem; outline: none; transition: border-color 0.2s; min-height: 44px; }
+
+.acc-text-input:focus { border-color: var(--accent-account); }
+
+input[type="date"].acc-text-input { appearance: none; }
+
+.category-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.cat-chip { padding: 6px 14px; border-radius: 18px; background: var(--bg-input); border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8rem; min-height: 34px; transition: 0.15s; }
+
+.cat-chip.active { background: var(--accent-account-bg); border-color: var(--accent-account); color: var(--accent-account); font-weight: 600; }
+
+.save-btn { width: 100%; padding: 13px; border-radius: var(--radius-sm); background: var(--accent-account); color: rgb(15, 17, 23); font-size: 0.95rem; font-weight: 700; min-height: 48px; transition: 0.15s; }
+
+.save-btn:active { transform: scale(0.98); opacity: 0.9; }
+
+.save-btn.editing { background: var(--accent-save); }
+
+.acc-record { display: flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; margin-bottom: 8px; }
+
+.acc-record-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
+
+.acc-record-icon.expense { background: rgba(245, 95, 107, 0.12); }
+
+.acc-record-icon.income { background: rgba(95, 207, 128, 0.12); }
+
+.acc-record-icon.save { background: rgba(245, 200, 107, 0.12); }
+
+.acc-record-body { flex: 1 1 0%; min-width: 0px; }
+
+.acc-record-cat { font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+.acc-record-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.acc-record-amount { font-size: 1rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.acc-record-amount.expense { color: var(--accent-red); }
+
+.acc-record-amount.income { color: var(--accent-green); }
+
+.acc-record-amount.save { color: var(--accent-save); }
+
+.acc-record-ops { display: flex; gap: 4px; }
+
+.acc-op-btn { color: var(--text-muted); padding: 6px; min-width: 32px; min-height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
+
+.acc-op-btn:active { background: var(--bg-input); }
+
+.acc-op-btn svg { width: 15px; height: 15px; }
+
+.history-summary { background: var(--bg-input); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 10px; font-size: 0.8rem; color: var(--text-secondary); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+
+.pwa-hint { background: linear-gradient(135deg, var(--accent-writing-bg), var(--accent-drawing-bg)); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; font-size: 0.82rem; color: var(--text-secondary); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+
+.pwa-hint svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+
+.pwa-hint strong { color: var(--text); }
+
+.pwa-hint .close-hint { margin-left: auto; color: var(--text-muted); padding: 2px 6px; font-size: 1.1rem; line-height: 1; }
+
+@media (min-width: 768px) {
+  .main-content { padding: 24px 32px 60px; }
+  .app-header { padding: 18px 32px 12px; }
+  .tab-bar { max-width: 480px; }
+  .record-card:hover { background: var(--bg-card-hover); }
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+
+::-webkit-scrollbar-track { background: transparent; }
+
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+::-webkit-scrollbar-thumb:hover { background: var(--border-active); }
+------MultipartBoundary--jfaxGGv5k37tzqhTmhA980tdW2GBwcMjR7A4UNnvsi------
